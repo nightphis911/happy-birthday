@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Selamat Ulang Tahun!</title>
+    <title>Happy Birthday</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
         <h1>Selamat Ulang Tahun!</h1>
-        <p id="message"></p>
-        <div class="gift" onclick="showGift()">
-            <img src="gift.png" alt="Kado" id="gift-image">
+        <div class="gift" id="gift" onclick="showGift()">
+            🎁
         </div>
-        <div id="gift-reveal" class="hidden">
-            <p>🎉 Kamu mendapat hadiah!</p>
-            <img src="present.png" alt="Hadiah" class="present">
-        </div>
+        <img id="giftImage" src="gift.png" alt="Hadiah" style="display:none;">
+        <p id="message" style="display:none;">Semoga harimu menyenangkan!</p>
     </div>
+
     <script src="script.js"></script>
 </body>
-                </html>
+        </html>
