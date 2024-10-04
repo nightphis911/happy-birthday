@@ -12,5 +12,5 @@ function showGift() {
     // Menampilkan pesan unduhan setelah jeda 5 detik
     setTimeout(() => {
         document.getElementById("downloadMessage").style.display = "block";
-    }, 5000); // 5000 milidetik = 5 detik
+    }, 2000); // 5000 milidetik = 5 detik
         }
