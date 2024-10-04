@@ -21,15 +21,26 @@ h1 {
     color: #ff69b4;
 }
 
-button {
-    padding: 10px 20px;
-    background-color: #ff69b4;
-    color: white;
-    border: none;
-    border-radius: 5px;
+.gift {
     cursor: pointer;
+    transition: transform 0.2s;
 }
 
-button:hover {
-    background-color: #ff1493;
-  }
+.gift:hover {
+    transform: scale(1.1);
+}
+
+.present {
+    display: none;
+    margin-top: 20px;
+    animation: fadeIn 0.5s;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
