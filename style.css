@@ -1,46 +1,25 @@
 body {
-    background-color: #f0f8ff;
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    margin: 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f2f2f2;
 }
 
 .container {
-    text-align: center;
-    border: 2px solid #ff69b4;
-    border-radius: 10px;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
-}
-
-h1 {
-    color: #ff69b4;
+    margin-top: 50px;
 }
 
 .gift {
+    font-size: 50px;
     cursor: pointer;
-    transition: transform 0.2s;
+    margin: 20px auto;
 }
 
-.gift:hover {
-    transform: scale(1.1);
-}
-
-.present {
-    display: none;
+img {
+    width: 200px; /* Ukuran gambar hadiah */
     margin-top: 20px;
-    animation: fadeIn 0.5s;
 }
 
-.hidden {
-    display: none;
-}
-
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+p {
+    font-size: 18px;
+    margin-top: 10px;
 }
