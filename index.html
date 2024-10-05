@@ -4,52 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kartu Ucapan Selamat Ulang Tahun</title>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f7f7f7;
-            font-family: Arial, sans-serif;
-        }
-        #card {
-            width: 200px;
-            height: 200px;
-            background-color: pink;
-            border: 2px solid #ff69b4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-            position: relative;
-        }
-        #card.move {
-            transform: translateX(200px);
-        }
-        #cardText {
-            font-size: 20px;
-            text-align: center;
-        }
-        #chineseText {
-            display: none;
-            font-size: 24px;
-            color: red;
-            position: absolute;
-            bottom: -40px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        #uploadDownload {
-            display: none;
-            margin-top: 20px;
-            text-align: center;
-        }
-        button {
-            margin: 10px;
-        }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
@@ -63,39 +18,9 @@
     <input type="file" id="uploadInput" />
 </div>
 
-<audio id="birthdaySong" src="path-to-your-birthday-song.mp3"></audio>
+<audio id="birthdaySong" src="assets/birthday-song.mp3"></audio>
 
-<script>
-    let clickCount = 0;
-    const card = document.getElementById('card');
-    const chineseText = document.getElementById('chineseText');
-    const birthdaySong = document.getElementById('birthdaySong');
-    const uploadDownload = document.getElementById('uploadDownload');
-
-    card.addEventListener('click', function() {
-        clickCount++;
-        
-        // Main action: Start the song and show download/upload options
-        if (clickCount === 1) {
-            birthdaySong.play();
-            uploadDownload.style.display = 'block';
-        }
-
-        // Easter egg: After 3 clicks, move the card and show the Chinese text
-        if (clickCount === 3) {
-            card.classList.add('move');
-            chineseText.style.display = 'block';
-        }
-    });
-
-    // Download Button Click Handler
-    document.getElementById('downloadBtn').addEventListener('click', function() {
-        const link = document.createElement('a');
-        link.href = 'path-to-your-downloadable-file.zip'; // Path to your file
-        link.download = 'birthday-present.zip';
-        link.click();
-    });
-</script>
+<script src="js/script.js"></script>
 
 </body>
 </html>
