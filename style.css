@@ -1,25 +1,131 @@
+/* CSS Global */
 body {
-    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f8ff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+}
+
+/* Kartu hadiah */
+#card {
+    width: 250px;
+    height: 250px;
+    background-color: #ffb6c1;
+    border: 5px solid #ff69b4;
+    border-radius: 15px;
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    background-color: #f2f2f2;
-}
-
-.container {
-    margin-top: 50px;
-}
-
-.gift {
-    font-size: 50px;
     cursor: pointer;
-    margin: 20px auto;
+    transition: transform 0.5s ease, background-color 0.5s ease;
+    position: relative;
 }
 
-img {
-    width: 200px; /* Ukuran gambar hadiah */
+/* Efek glow saat hover pada kartu */
+#card:hover {
+    transform: scale(1.05);
+    background-color: #ff1493;
+    box-shadow: 0px 15px 30px rgba(255, 105, 180, 0.5);
+}
+
+/* Teks pada kartu */
+#cardText {
+    font-size: 24px;
+    color: white;
+    font-weight: bold;
+}
+
+/* Teks bahasa Cina yang akan muncul */
+#chineseText {
+    display: none;
+    font-size: 26px;
+    color: #fff;
+    position: absolute;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Animasi ketika kartu bergerak */
+#card.move {
+    transform: translateX(200px);
+    background-color: #ff69b4;
+}
+
+/* Opsi upload dan download */
+#uploadDownload {
+    display: none;
     margin-top: 20px;
+    text-align: center;
 }
 
-p {
-    font-size: 18px;
+/* Style tombol download */
+button {
+    background-color: #ff69b4;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff1493;
+}
+
+button:active {
+    transform: scale(0.95);
+    background-color: #ff007f;
+}
+
+#uploadInput {
     margin-top: 10px;
+}
+
+/* Media Queries untuk layar yang lebih kecil */
+@media (max-width: 768px) {
+    #card {
+        width: 200px;
+        height: 200px;
+    }
+
+    #cardText {
+        font-size: 20px;
+    }
+
+    #chineseText {
+        font-size: 22px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    #card {
+        width: 150px;
+        height: 150px;
+    }
+
+    #cardText {
+        font-size: 16px;
+    }
+
+    #chineseText {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 12px;
+        padding: 6px 12px;
+    }
 }
