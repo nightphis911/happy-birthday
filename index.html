@@ -1,24 +1,101 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Birthday</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Kartu Ucapan Selamat Ulang Tahun</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f7f7f7;
+            font-family: Arial, sans-serif;
+        }
+        #card {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            border: 2px solid #ff69b4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+        #card.move {
+            transform: translateX(200px);
+        }
+        #cardText {
+            font-size: 20px;
+            text-align: center;
+        }
+        #chineseText {
+            display: none;
+            font-size: 24px;
+            color: red;
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        #uploadDownload {
+            display: none;
+            margin-top: 20px;
+            text-align: center;
+        }
+        button {
+            margin: 10px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <h1>happy birthday!</h1>
-        <h1>click dong😁👇</h1>
-        <div class="gift" id="gift" onclick="showGift()">
-            🎁
-        </div>
-        <img id="giftImage" src="present.png" alt="Hadiah" style="display:none;">
-        <p id="message" style="display:none;"> semoga kamu suka hadiah dari watashi,.🤓</p>
-    </div>
 
-    <script src="script.js"></script>
-    <audio id="audio" src="ren.mp3" preload="auto"></audio>
-    <p id="downloadMessage" style="display:none;"> plis download vid nya truss up disw dong:>: <a href="upload_vid_ini_di_sw_plis🙃.mp4" download>upload_vid_ini_di_sw_plis🙃.mp4</a></p>
+<div id="card">
+    <div id="cardText">🎁 Tekan untuk buka 🎁</div>
+    <div id="chineseText">我爱你</div>
+</div>
+
+<div id="uploadDownload">
+    <button id="downloadBtn">Download</button>
+    <input type="file" id="uploadInput" />
+</div>
+
+<audio id="birthdaySong" src="path-to-your-birthday-song.mp3"></audio>
+
+<script>
+    let clickCount = 0;
+    const card = document.getElementById('card');
+    const chineseText = document.getElementById('chineseText');
+    const birthdaySong = document.getElementById('birthdaySong');
+    const uploadDownload = document.getElementById('uploadDownload');
+
+    card.addEventListener('click', function() {
+        clickCount++;
+        
+        // Main action: Start the song and show download/upload options
+        if (clickCount === 1) {
+            birthdaySong.play();
+            uploadDownload.style.display = 'block';
+        }
+
+        // Easter egg: After 3 clicks, move the card and show the Chinese text
+        if (clickCount === 3) {
+            card.classList.add('move');
+            chineseText.style.display = 'block';
+        }
+    });
+
+    // Download Button Click Handler
+    document.getElementById('downloadBtn').addEventListener('click', function() {
+        const link = document.createElement('a');
+        link.href = 'path-to-your-downloadable-file.zip'; // Path to your file
+        link.download = 'birthday-present.zip';
+        link.click();
+    });
+</script>
+
 </body>
-        </html>
+</html>
